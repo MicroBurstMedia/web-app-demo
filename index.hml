@@ -1,0 +1,286 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Nunito:wght@400;600;700;800&display=swap');
+:root{--sf:#6DBFB8;--sfl:#B8DFD9;--sfxl:#EAF5F3;--sd:#F5EDDA;--sdd:#D5BE90;--pk:#EEC5BF;--pkl:#FAE8E5;--wh:#FDFAF4;--tx:#263832;--md:#527068;--lt:#8BA09A;--se:'Playfair Display',Georgia,serif;--sa:'Nunito','Segoe UI',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sa);background:var(--wh);color:var(--tx);font-size:16px}
+.nav{background:var(--wh);border-bottom:1.5px solid var(--sdd);padding:0 clamp(1.25rem,5vw,4rem);height:66px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:var(--se);font-size:1.4rem;color:var(--tx);cursor:pointer;user-select:none}
+.logo em{color:var(--sf);font-style:italic}
+.nav-links{display:flex;gap:1.75rem;list-style:none}
+.nav-links a{text-decoration:none;color:var(--md);font-weight:700;font-size:0.83rem;letter-spacing:.04em;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover{color:var(--sf)}
+.nav-r{display:flex;align-items:center;gap:.75rem}
+.nav-shop{background:var(--sf);color:white;border:none;border-radius:50px;padding:.5rem 1.25rem;font-family:var(--sa);font-weight:800;font-size:.83rem;cursor:pointer}
+.hbg{display:none;background:none;border:none;cursor:pointer;padding:4px}
+.hbg span{display:block;width:22px;height:2px;background:var(--tx);border-radius:2px;margin:5px 0}
+.mob-nav{display:none;background:var(--wh);border-bottom:1.5px solid var(--sdd);padding:.5rem 1.5rem .75rem}
+.mob-nav a{display:block;padding:.6rem 0;color:var(--md);text-decoration:none;font-weight:700;font-size:.9rem;border-bottom:1px solid var(--sd)}
+.mob-nav a:last-child{border-bottom:none}
+.page{display:none}
+.page.on{display:block}
+.hero{background:var(--sd);padding:clamp(2.5rem,7vw,5.5rem) clamp(1.25rem,5vw,4rem);display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center}
+.tag{display:inline-flex;align-items:center;gap:.5rem;background:var(--pkl);border:1.5px solid var(--pk);border-radius:50px;padding:.3rem .85rem;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:#8B3A52;margin-bottom:1.25rem}
+.tag-dot{width:7px;height:7px;background:var(--sf);border-radius:50%;flex-shrink:0}
+.hero h1{font-family:var(--se);font-size:clamp(2.1rem,5.5vw,3.8rem);line-height:1.12;margin-bottom:1.25rem;font-weight:700}
+.hero h1 em{color:var(--sf);font-style:italic}
+.hero-sub{color:var(--md);font-size:1rem;line-height:1.8;max-width:440px;margin-bottom:2rem}
+.hero-btns{display:flex;gap:.75rem;flex-wrap:wrap}
+.btn-p{background:var(--sf);color:white;border:none;border-radius:50px;padding:.875rem 1.875rem;font-family:var(--sa);font-weight:800;font-size:.93rem;cursor:pointer;transition:background .2s}
+.btn-p:hover{background:#5AAAA3}
+.btn-s{background:transparent;border:2px solid var(--sdd);border-radius:50px;padding:.875rem 1.875rem;font-family:var(--sa);font-weight:700;font-size:.93rem;cursor:pointer;color:var(--tx);transition:border-color .2s,color .2s}
+.btn-s:hover{border-color:var(--sf);color:var(--sf)}
+.hero-vis{background:var(--sfxl);border-radius:20px;border:2px solid var(--sfl);min-height:320px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:1rem}
+.wv{line-height:0;overflow:hidden}
+.wv svg{display:block;width:100%}
+.feats{background:var(--sf);display:grid;grid-template-columns:repeat(3,1fr);padding:2.5rem clamp(1.25rem,5vw,4rem);gap:2rem}
+.feat{display:flex;gap:1rem;color:white}
+.feat-ico{width:46px;height:46px;background:rgba(255,255,255,.2);border-radius:12px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.feat h4{font-size:.95rem;font-weight:800;margin-bottom:.2rem}
+.feat p{font-size:.82rem;opacity:.85;line-height:1.5}
+.shop{padding:clamp(2.5rem,5vw,4.5rem) clamp(1.25rem,5vw,4rem) 4rem}
+.shop-hd{text-align:center;margin-bottom:2.5rem}
+.shop-hd h2{font-family:var(--se);font-size:clamp(1.75rem,3.5vw,2.6rem);margin-bottom:.6rem}
+.shop-hd p{color:var(--md);max-width:400px;margin:0 auto 1.5rem;line-height:1.7;font-size:.93rem}
+.filters{display:flex;justify-content:center;gap:.5rem;flex-wrap:wrap}
+.fb{border:1.5px solid var(--sdd);background:transparent;color:var(--md);border-radius:50px;padding:.45rem 1.2rem;font-family:var(--sa);font-weight:700;font-size:.82rem;cursor:pointer;transition:all .2s}
+.fb:hover,.fb.on{background:var(--sf);border-color:var(--sf);color:white}
+.p-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1.25rem;margin-top:2rem}
+.card{background:var(--wh);border:1.5px solid var(--sdd);border-radius:14px;overflow:hidden;cursor:pointer;transition:border-color .2s,transform .2s}
+.card:hover{border-color:var(--sfl);transform:translateY(-3px)}
+.thumb{height:185px;display:flex;align-items:center;justify-content:center;position:relative}
+.bdge{position:absolute;top:10px;left:10px;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;border-radius:50px;padding:.22rem .65rem}
+.bk{background:var(--pkl);color:#8B3A52;border:1px solid var(--pk)}
+.ak{background:var(--sfxl);color:#2A7A70;border:1px solid var(--sfl)}
+.card-bd{padding:1rem 1.1rem 1.1rem}
+.card-bd h3{font-family:var(--se);font-size:1.05rem;margin-bottom:.3rem;line-height:1.3}
+.card-bd .cs{font-size:.82rem;color:var(--md);line-height:1.5;margin-bottom:.9rem}
+.card-ft{display:flex;align-items:center;justify-content:space-between}
+.card-px{font-weight:800;color:var(--sf);font-size:1.05rem}
+.card-ab{background:var(--sd);border:none;border-radius:50px;padding:.38rem .9rem;font-family:var(--sa);font-weight:700;font-size:.78rem;cursor:pointer;color:var(--tx);transition:background .2s,color .2s}
+.card:hover .card-ab{background:var(--sf);color:white}
+.d-wrap{padding:clamp(2rem,4vw,3.5rem) clamp(1.25rem,5vw,4rem) 4rem}
+.bk-btn{background:none;border:none;color:var(--md);font-family:var(--sa);font-weight:700;font-size:.88rem;cursor:pointer;display:flex;align-items:center;gap:.4rem;padding:0;margin-bottom:2rem}
+.bk-btn:hover{color:var(--sf)}
+.d-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.d-vis{border-radius:18px;min-height:340px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.d-cat{margin-bottom:1rem}
+.d-info h1{font-family:var(--se);font-size:clamp(1.5rem,3vw,2.2rem);margin-bottom:.7rem;line-height:1.2}
+.d-desc{color:var(--md);line-height:1.75;margin-bottom:1.25rem;font-size:.93rem}
+.d-feats{list-style:none;border-top:1.5px solid var(--sdd);border-bottom:1.5px solid var(--sdd);padding:1rem 0;margin-bottom:1.5rem}
+.d-feats li{display:flex;gap:.6rem;align-items:center;padding:.3rem 0;font-size:.88rem;color:var(--md)}
+.chk{width:18px;height:18px;background:var(--sfxl);border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:900;color:var(--sf);border:1.5px solid var(--sfl)}
+.px-row{display:flex;align-items:baseline;gap:.75rem;margin-bottom:1.5rem}
+.big-px{font-size:2.25rem;font-weight:800;color:var(--sf)}
+.px-note{font-size:.82rem;color:var(--md)}
+.buy-btn{background:var(--sf);color:white;border:none;border-radius:50px;padding:1rem 2rem;font-family:var(--sa);font-weight:800;font-size:1rem;cursor:pointer;width:100%;transition:background .2s}
+.buy-btn:hover{background:#5AAAA3}
+.ty-w{min-height:60vh;display:flex;align-items:center;justify-content:center;padding:3rem 1.5rem;background:var(--sfxl)}
+.ty-c{background:var(--wh);border-radius:24px;border:2px solid var(--sfl);padding:2.5rem 2rem;max-width:440px;width:100%;text-align:center}
+.ty-ico{width:68px;height:68px;background:var(--sf);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem}
+.ty-c h1{font-family:var(--se);font-size:1.75rem;margin-bottom:.65rem}
+.ty-c .ty-sub{color:var(--md);line-height:1.7;font-size:.92rem;margin-bottom:1.75rem}
+.dl-btn{background:var(--sf);color:white;border:none;border-radius:50px;padding:1rem 2rem;font-family:var(--sa);font-weight:800;font-size:.95rem;cursor:pointer;width:100%;margin-bottom:.65rem;transition:background .2s}
+.dl-btn:hover{background:#5AAAA3}
+.em-note{font-size:.77rem;color:var(--lt);margin-bottom:1.5rem;display:flex;align-items:center;justify-content:center;gap:.4rem}
+.ty-hr{border:none;border-top:1.5px solid var(--sdd);margin-bottom:1.25rem}
+.go-back{background:none;border:none;color:var(--sf);font-family:var(--sa);font-weight:700;font-size:.88rem;cursor:pointer}
+footer{background:var(--tx);color:#A5C2BC;padding:3rem clamp(1.25rem,5vw,4rem);display:grid;grid-template-columns:2fr 1fr 1fr;gap:2.5rem}
+.f-logo{font-family:var(--se);font-size:1.35rem;color:white;margin-bottom:.6rem}
+.f-logo em{color:var(--sf);font-style:italic}
+.f-tag{font-size:.82rem;opacity:.65;line-height:1.65}
+footer h5{font-size:.77rem;text-transform:uppercase;letter-spacing:.08em;color:white;margin-bottom:.75rem;font-weight:800}
+footer ul{list-style:none}
+footer li{padding:.25rem 0}
+footer a{color:#A5C2BC;text-decoration:none;font-size:.82rem;opacity:.65}
+footer a:hover{opacity:1}
+.f-bot{background:#1C2A25;text-align:center;padding:.75rem;font-size:.75rem;color:#527068}
+@media(max-width:768px){.nav-links,.nav-shop{display:none}.hbg{display:block}.hero{grid-template-columns:1fr;padding-top:2rem}.hero-vis{min-height:220px}.feats{grid-template-columns:1fr}.d-grid{grid-template-columns:1fr}footer{grid-template-columns:1fr}}
+@media(max-width:460px){.hero-btns{flex-direction:column}.btn-p,.btn-s{width:100%}.p-grid{grid-template-columns:repeat(2,1fr)}}
+</style>
+
+<div id="app">
+<nav class="nav">
+  <div class="logo" onclick="goHome()">Shore<em>line</em> Stories</div>
+  <ul class="nav-links">
+    <li><a href="#" onclick="goHome();return false">Home</a></li>
+    <li><a href="#" onclick="toShop();return false">Shop</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Blog</a></li>
+  </ul>
+  <div class="nav-r">
+    <button class="nav-shop" onclick="toShop()">Shop Now</button>
+    <button class="hbg" onclick="toggleNav()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mob-nav" id="mn">
+  <a href="#" onclick="goHome();toggleNav();return false">Home</a>
+  <a href="#" onclick="toShop();toggleNav();return false">Shop</a>
+  <a href="#">About</a>
+  <a href="#">Blog</a>
+</div>
+
+<div id="pg-main" class="page on">
+  <section class="hero">
+    <div>
+      <div class="tag"><span class="tag-dot"></span>New for Summer 2025</div>
+      <h1>Where Every Story<br>Meets the <em>Shore.</em></h1>
+      <p class="hero-sub">Magical books and printable activity packs for little adventurers — inspired by East Coast island life and crafted to spark wonder, one page at a time.</p>
+      <div class="hero-btns">
+        <button class="btn-p" onclick="toShop()">Explore the Shop</button>
+        <button class="btn-s">Our Story</button>
+      </div>
+    </div>
+    <div class="hero-vis">
+      <svg viewBox="0 0 280 250" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:88%;max-width:300px">
+        <ellipse cx="55" cy="42" rx="28" ry="17" fill="white" opacity=".9"/><ellipse cx="73" cy="35" rx="22" ry="14" fill="white" opacity=".9"/>
+        <ellipse cx="215" cy="50" rx="24" ry="15" fill="white" opacity=".75"/><ellipse cx="228" cy="43" rx="18" ry="11" fill="white" opacity=".75"/>
+        <circle cx="155" cy="22" r="2.5" fill="#FFD666"/><circle cx="170" cy="12" r="1.5" fill="#FFD666" opacity=".8"/><circle cx="142" cy="10" r="1.5" fill="#FFD666" opacity=".7"/><circle cx="185" cy="28" r="1.5" fill="#FFD666" opacity=".6"/>
+        <ellipse cx="140" cy="205" rx="108" ry="28" fill="#C8A97A"/><ellipse cx="140" cy="200" rx="96" ry="20" fill="#7A9E6B"/><ellipse cx="140" cy="197" rx="85" ry="14" fill="#8DB07A"/>
+        <rect x="122" y="120" width="36" height="78" rx="3" fill="white"/>
+        <rect x="122" y="135" width="36" height="11" fill="#E8706A"/><rect x="122" y="159" width="36" height="11" fill="#E8706A"/><rect x="122" y="181" width="36" height="17" fill="#E8706A"/>
+        <rect x="131" y="145" width="18" height="12" rx="9 9 3 3" fill="#7DBFB8" opacity=".8"/>
+        <rect x="117" y="114" width="46" height="8" rx="2" fill="#D0CFC0"/>
+        <rect x="121" y="90" width="38" height="26" rx="3" fill="white" stroke="#D0CFC0" stroke-width="1.5"/>
+        <rect x="127" y="94" width="10" height="18" rx="5 5 2 2" fill="#7DBFB8" opacity=".85"/><rect x="143" y="94" width="10" height="18" rx="5 5 2 2" fill="#7DBFB8" opacity=".85"/>
+        <path d="M117,90 Q140,68 163,90 Z" fill="#6DBFB8"/>
+        <circle cx="140" cy="75" r="10" fill="#FFD666" opacity=".35"/><circle cx="140" cy="75" r="5" fill="#FFD666" opacity=".7"/><circle cx="140" cy="75" r="2.5" fill="white"/>
+        <line x1="140" y1="75" x2="172" y2="48" stroke="#FFD666" stroke-width="1.5" opacity=".6"/><line x1="140" y1="75" x2="182" y2="62" stroke="#FFD666" stroke-width="1.5" opacity=".4"/>
+        <line x1="140" y1="75" x2="108" y2="48" stroke="#FFD666" stroke-width="1.5" opacity=".6"/><line x1="140" y1="75" x2="98" y2="62" stroke="#FFD666" stroke-width="1.5" opacity=".4"/>
+        <line x1="140" y1="68" x2="140" y2="52" stroke="#8B7355" stroke-width="1.5"/>
+        <path d="M140,52 L154,57 L140,62 Z" fill="#E8706A"/>
+        <rect x="115" y="196" width="50" height="6" rx="2" fill="#B8956A"/><rect x="118" y="191" width="44" height="6" rx="2" fill="#C8A57A"/>
+        <path d="M0,218 Q35,208 70,218 Q105,228 140,218 Q175,208 210,218 Q245,228 280,218 L280,250 L0,250 Z" fill="#7DBFB8" opacity=".5"/>
+        <path d="M0,224 Q40,214 80,224 Q120,234 160,224 Q200,214 240,224 Q265,231 280,227 L280,250 L0,250 Z" fill="#6DBFB8" opacity=".75"/>
+        <path d="M198,210 L215,210 L220,220 L193,220 Z" fill="white" stroke="#C8B898" stroke-width="1"/>
+        <line x1="207" y1="210" x2="207" y2="196" stroke="#8B7355" stroke-width="1.5"/>
+        <path d="M207,196 L220,203 L207,210 Z" fill="#EEC5BF"/>
+        <g transform="rotate(-6,55,210)"><rect x="38" y="200" width="30" height="20" rx="2" fill="white" stroke="#DDD" stroke-width="1"/><rect x="38" y="200" width="5" height="20" rx="1 0 0 1" fill="#EEC5BF"/><line x1="46" y1="204" x2="65" y2="204" stroke="#E0D8C8" stroke-width="1"/><line x1="46" y1="208" x2="65" y2="208" stroke="#E0D8C8" stroke-width="1"/><line x1="46" y1="212" x2="65" y2="212" stroke="#E0D8C8" stroke-width="1"/></g>
+        <path d="M90,60 Q95,55 100,60" stroke="#B0C8C5" stroke-width="1.5" fill="none"/><path d="M102,58 Q107,53 112,58" stroke="#B0C8C5" stroke-width="1.5" fill="none"/>
+        <path d="M175,75 Q180,70 185,75" stroke="#B0C8C5" stroke-width="1.5" fill="none"/>
+      </svg>
+    </div>
+  </section>
+
+  <div class="wv" style="background:var(--sd)">
+    <svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:70px"><path d="M0,35 C240,70 480,0 720,35 C960,70 1200,0 1440,35 L1440,70 L0,70 Z" fill="#6DBFB8"/></svg>
+  </div>
+
+  <section class="feats">
+    <div class="feat">
+      <div class="feat-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
+      <div><h4>Instant Downloads</h4><p>PDF files delivered immediately after purchase — print at home, start creating right away.</p></div>
+    </div>
+    <div class="feat">
+      <div class="feat-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+      <div><h4>Educator Approved</h4><p>Designed with child development in mind. Thoughtfully crafted for ages 3–10.</p></div>
+    </div>
+    <div class="feat">
+      <div class="feat-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/></svg></div>
+      <div><h4>Island-Inspired Stories</h4><p>Every page rooted in real East Coast island life — where wonder lives at the water's edge.</p></div>
+    </div>
+  </section>
+
+  <div class="wv" style="background:var(--sf)">
+    <svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:70px"><path d="M0,35 C360,70 720,0 1080,35 C1260,52 1380,20 1440,35 L1440,70 L0,70 Z" fill="#FDFAF4"/></svg>
+  </div>
+
+  <section class="shop" id="shop">
+    <div class="shop-hd">
+      <h2>The Digital Shoreline Shop</h2>
+      <p>Printable PDFs ready the moment you check out. No waiting, no shipping — just pure coastal creativity.</p>
+      <div class="filters">
+        <button class="fb on" onclick="setFilter('all',this)">All Products</button>
+        <button class="fb" onclick="setFilter('book',this)">Books</button>
+        <button class="fb" onclick="setFilter('activity',this)">Activity Packs</button>
+      </div>
+    </div>
+    <div class="p-grid" id="pgrid"></div>
+  </section>
+
+  <footer>
+    <div><div class="f-logo">Shore<em>line</em> Stories</div><p class="f-tag">Storybook-inspired books and activity packs<br>for little East Coast adventurers.</p></div>
+    <div><h5>Explore</h5><ul><li><a href="#">All Products</a></li><li><a href="#">Children's Books</a></li><li><a href="#">Activity Packs</a></li><li><a href="#">Gift Cards</a></li></ul></div>
+    <div><h5>Help</h5><ul><li><a href="#">FAQs</a></li><li><a href="#">Download Guide</a></li><li><a href="#">Contact Us</a></li><li><a href="#">Refund Policy</a></li></ul></div>
+  </footer>
+  <div class="f-bot">© 2025 Shoreline Stories · Crafted with care on the East Coast</div>
+</div>
+
+<div id="pg-det" class="page">
+  <div class="d-wrap">
+    <button class="bk-btn" onclick="goShop()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M19 12H5"/><polyline points="12 19 5 12 12 5"/></svg> Back to Shop</button>
+    <div class="d-grid">
+      <div class="d-vis" id="det-vis"></div>
+      <div class="d-info" id="det-info"></div>
+    </div>
+  </div>
+  <footer>
+    <div><div class="f-logo">Shore<em>line</em> Stories</div><p class="f-tag">Printable PDFs for little adventurers.</p></div>
+    <div><h5>Explore</h5><ul><li><a href="#">All Products</a></li><li><a href="#">Books</a></li><li><a href="#">Activity Packs</a></li></ul></div>
+    <div><h5>Help</h5><ul><li><a href="#">FAQs</a></li><li><a href="#">Contact Us</a></li></ul></div>
+  </footer>
+  <div class="f-bot">© 2025 Shoreline Stories · Crafted with care on the East Coast</div>
+</div>
+
+<div id="pg-ty" class="page">
+  <div class="ty-w">
+    <div class="ty-c">
+      <div class="ty-ico"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <h1>You're all set!</h1>
+      <p class="ty-sub">Thank you for your purchase. Your download is ready — click below to get your files, and check your inbox for a receipt and backup download link.</p>
+      <button class="dl-btn" onclick="downloadDemo()">Download Your PDF Now</button>
+      <p class="em-note"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> A backup link has been emailed to you.</p>
+      <hr class="ty-hr">
+      <p style="font-size:.82rem;color:var(--md);margin-bottom:1.25rem;text-align:left">Need help? If your download doesn't start, check your spam folder or <a href="#" style="color:var(--sf)">contact us</a>.</p>
+      <button class="go-back" onclick="goShop()">Continue Shopping</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+const products=[
+  {id:1,title:"The Lighthouse Keeper's Secret",type:'book',price:12,short:"A girl discovers her grandfather's hidden world of sea charts.",desc:"A heartwarming tale of young Maya who discovers her grandfather's hidden workshop filled with sea charts, compass roses, and decades of lighthouse journals. Perfect for bedtime reading.",features:["32 beautifully illustrated pages","Ages 4–8 recommended","Instant PDF download","Print at home or at a copy shop"],bg:'#FAE8E5'},
+  {id:2,title:"Tidepool Tales",type:'book',price:10,short:"Journey beneath the waves with Mara the hermit crab.",desc:"Dive beneath the waves and join Mara the hermit crab and her tidepool friends on a big-hearted ocean adventure. Vivid illustrations bring the undersea world to life.",features:["28 full-color illustrated pages","Ages 3–7 recommended","Instant PDF download","Includes family reading guide"],bg:'#FAE8E5'},
+  {id:3,title:"Sandy Toes Story Collection",type:'book',price:14,short:"Three short stories in one — perfect for beach house reading.",desc:"Three complete short stories in a single beautifully illustrated volume. Perfect for bedtime, road trips, or rainy days at the beach house.",features:["3 complete stories","48 illustrated pages","Ages 5–9 recommended","Bonus activity pages included"],bg:'#FAE8E5'},
+  {id:4,title:"Summer Shore Activity Pack",type:'activity',price:8,short:"20+ printable activities — coloring, mazes, and seaside crafts.",desc:"Over 20 printable activities featuring detailed coloring pages, word searches, mazes, shell-counting puzzles, and step-by-step seaside craft guides.",features:["20+ unique printable activities","Coloring pages, puzzles & mazes","Ages 4–8","Print as many times as you like"],bg:'#EAF5F3'},
+  {id:5,title:"Ocean Explorer Activity Pack",type:'activity',price:9,short:"Science-meets-fun: shell ID, tide tracking, and more.",desc:"Hands-on ocean science activities for curious little minds — shell identification charts, tide tracking journals, creature matching games, and an ocean depth poster.",features:["Science-meets-fun activities","Shell & sea creature guides","Ages 6–10","Educator-approved content"],bg:'#EAF5F3'},
+  {id:6,title:"Island Adventures Activity Pack",type:'activity',price:7,short:"Maps, treasure hunts, and creative island-themed activities.",desc:"Printable treasure hunt templates, colorable island maps, story-starter cards, and island-themed creative activities for little explorers who love adventure.",features:["Printable treasure hunt template","Colorable island maps","Ages 3–7","Perfect for travel days or staycations"],bg:'#EAF5F3'}
+];
+
+function bookSVG(bg){return`<svg viewBox="0 0 180 145" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:72%"><rect width="180" height="145" fill="${bg}"/><rect x="20" y="22" width="62" height="88" rx="4" fill="white" stroke="#DDD" stroke-width="1.5"/><rect x="84" y="22" width="62" height="88" rx="4" fill="white" stroke="#DDD" stroke-width="1.5"/><rect x="81" y="22" width="7" height="88" fill="#EEC5BF"/><line x1="30" y1="40" x2="75" y2="40" stroke="#E8D8D8" stroke-width="1.5" stroke-linecap="round"/><line x1="30" y1="50" x2="75" y2="50" stroke="#E8D8D8" stroke-width="1.5" stroke-linecap="round"/><line x1="30" y1="60" x2="68" y2="60" stroke="#E8D8D8" stroke-width="1.5" stroke-linecap="round"/><line x1="30" y1="70" x2="75" y2="70" stroke="#E8D8D8" stroke-width="1.5" stroke-linecap="round"/><line x1="30" y1="80" x2="62" y2="80" stroke="#E8D8D8" stroke-width="1.5" stroke-linecap="round"/><rect x="96" y="58" width="10" height="30" rx="2" fill="white" stroke="#CCC" stroke-width="1"/><rect x="96" y="64" width="10" height="4" fill="#E8706A"/><rect x="96" y="74" width="10" height="4" fill="#E8706A"/><path d="M94,58 Q101,50 108,58 Z" fill="#6DBFB8"/><ellipse cx="101" cy="83" rx="11" ry="4" fill="#8DB07A"/><path d="M91,88 Q101,84 111,88 Q121,92 131,88 L131,96 L91,96 Z" fill="#7DBFB8" opacity=".5"/><circle cx="120" cy="35" r="2.5" fill="#FFD666"/><circle cx="130" cy="28" r="1.5" fill="#FFD666" opacity=".8"/><circle cx="110" cy="30" r="1.5" fill="#FFD666" opacity=".7"/><path d="M143,108 Q143,111 137,111 Q130,109 130,102 L137,105 Z" fill="#F0E8DC" stroke="#DDD" stroke-width=".5"/></svg>`}
+
+function actSVG(bg){return`<svg viewBox="0 0 180 145" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:72%"><rect width="180" height="145" fill="${bg}"/><rect x="30" y="32" width="88" height="100" rx="4" fill="white" stroke="#C8E0DC" stroke-width="1.5" transform="rotate(-5 74 82)"/><rect x="30" y="28" width="88" height="100" rx="4" fill="white" stroke="#C8E0DC" stroke-width="1.5" transform="rotate(-2 74 82)"/><rect x="32" y="25" width="88" height="100" rx="4" fill="white" stroke="#B8DFD9" stroke-width="2"/><path d="M76,45 l4,12 l13,0 l-10.5,7.5 l4,12 l-10.5,-7.5 l-10.5,7.5 l4,-12 l-10.5,-7.5 l13,0 Z" fill="#FFD666" opacity=".9"/><rect x="120" y="18" width="8" height="52" rx="3.5" fill="#EEC5BF" transform="rotate(20 124 44)"/><path d="M117,64 L122,70 L127,60 Z" fill="#E8706A" transform="rotate(20 122 65)"/><rect x="118" y="18" width="8" height="7" rx="3 3 0 0" fill="#D4C4AA" transform="rotate(20 122 21.5)"/><line x1="45" y1="82" x2="96" y2="82" stroke="#6DBFB8" stroke-width="2.5" stroke-linecap="round" opacity=".7"/><line x1="45" y1="93" x2="82" y2="93" stroke="#EEC5BF" stroke-width="2.5" stroke-linecap="round" opacity=".7"/><line x1="45" y1="104" x2="90" y2="104" stroke="#FFD666" stroke-width="2.5" stroke-linecap="round" opacity=".6"/><path d="M65,116 Q65,109 72,109 Q79,109 79,116 Q79,123 72,123 Q65,123 65,116" stroke="#6DBFB8" stroke-width="1.5" fill="none"/><line x1="72" y1="109" x2="72" y2="123" stroke="#6DBFB8" stroke-width="1" opacity=".5"/><line x1="65" y1="116" x2="79" y2="116" stroke="#6DBFB8" stroke-width="1" opacity=".5"/></svg>`}
+
+function renderCards(type){
+  const list=type==='all'?products:products.filter(p=>p.type===type);
+  document.getElementById('pgrid').innerHTML=list.map(p=>`<div class="card" onclick="openProduct(${p.id})"><div class="thumb" style="background:${p.bg}">${p.type==='book'?bookSVG(p.bg):actSVG(p.bg)}<span class="bdge ${p.type==='book'?'bk':'ak'}">${p.type==='book'?'Book':'Activity Pack'}</span></div><div class="card-bd"><h3>${p.title}</h3><p class="cs">${p.short}</p><div class="card-ft"><span class="card-px">$${p.price}</span><button class="card-ab">View Details</button></div></div></div>`).join('');
+}
+
+function setFilter(type,btn){document.querySelectorAll('.fb').forEach(b=>b.classList.remove('on'));btn.classList.add('on');renderCards(type);}
+
+function openProduct(id){
+  const p=products.find(x=>x.id===id);if(!p)return;
+  showPage('pg-det');
+  const dv=document.getElementById('det-vis');
+  dv.style.background=p.bg;dv.style.minHeight='340px';
+  dv.innerHTML=p.type==='book'?bookSVG(p.bg).replace('style="width:72%"','style="width:88%;max-width:320px"'):actSVG(p.bg).replace('style="width:72%"','style="width:88%;max-width:320px"');
+  document.getElementById('det-info').innerHTML=`<div class="d-cat"><span class="bdge ${p.type==='book'?'bk':'ak'}">${p.type==='book'?"Children's Book":"Activity Pack"}</span></div><h1>${p.title}</h1><p class="d-desc">${p.desc}</p><ul class="d-feats">${p.features.map(f=>`<li><span class="chk">✓</span>${f}</li>`).join('')}</ul><div class="px-row"><span class="big-px">$${p.price}</span><span class="px-note">One-time · Instant PDF download</span></div><button class="buy-btn" onclick="buyNow(${p.price})">Get Instant Download — $${p.price}</button>`;
+}
+
+function buyNow(price){showPage('pg-ty');}
+
+function downloadDemo(){
+  const b=document.querySelector('.dl-btn');
+  b.textContent='✓ Download Started!';
+  b.style.background='#5AAAA3';
+  b.disabled=true;
+}
+
+function showPage(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('on'));document.getElementById(id).classList.add('on');}
+function goHome(){showPage('pg-main');}
+function goShop(){showPage('pg-main');setTimeout(()=>{const e=document.getElementById('shop');if(e)e.scrollIntoView({behavior:'smooth'});},50);}
+function toShop(){showPage('pg-main');setTimeout(()=>{const e=document.getElementById('shop');if(e)e.scrollIntoView({behavior:'smooth'});},50);}
+function toggleNav(){const m=document.getElementById('mn');m.style.display=m.style.display==='block'?'none':'block';}
+
+renderCards('all');
+</script>
